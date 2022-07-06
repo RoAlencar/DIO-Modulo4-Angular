@@ -3,6 +3,3 @@ Repositório referente ao quarto modulo do Santander Bootcamp Fullstack Develope
 
 Criar projeto em angular:
 *npx ng new (nome da pasta)
-
-Rodar o projeto:
-npx ng serve
