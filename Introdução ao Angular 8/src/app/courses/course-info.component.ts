@@ -4,21 +4,27 @@ import { Course } from "./course";
 import { CourseService } from "./course.service";
 
 @Component({
-    templateUrl: './course-info.component.html'
+  templateUrl: './course-info.component.html'
 })
 
-export class CourseInfoComponent implements OnInit{
+export class CourseInfoComponent implements OnInit {
 
-    course! : Course;
+  course!: Course;
 
-    constructor(private activatedRoute : ActivatedRoute, private courseService: CourseService) {}
+  constructor(private activatedRoute: ActivatedRoute, private courseService: CourseService) { }
 
-    ngOnInit(): void {
-      this.course = this.courseService.retriveById(+this.activatedRoute.snapshot.paramMap.get('id')!);
-    }
+  ngOnInit(): void {
+    this.courseService.retriveById(+this.activatedRoute.snapshot.paramMap.get('id')!).subscribe({
+      next: course => this.course = course,
+      error: err => console.log('Error', err)
+    });
+  }
 
-    save(): void{
-      this.courseService.save(this.course);
-    }
+  save(): void {
+    this.courseService.save(this.course).subscribe({
+      next: course => console.log('Saved with sucess', this.course),
+      error: err => console.log('Error', err)
+    });
+  }
 
 }
