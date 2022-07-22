@@ -30,3 +30,11 @@
         *ngSwitchDefault>Esse é o default
     </li>
 </ul>
+
+<ul class="list-group mx-auto  my-3 col-3">
+    <li class="list-group-item"
+    *ngFor="let pessoa of pessoas">
+    O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome}}
+        
+    </li>
+</ul>
