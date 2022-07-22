@@ -1,10 +1,7 @@
 <h1 appMarcaTexto corDeFundo="purple" corDoTexto="yellow" class="text-center"> Angular Diretivas</h1>
 
 <!-- Diretivas de Atributo -->
-<div 
-    [ngStyle]="{background: count < 5 ? 'red' : 'green'}"
-    [ngClass]="{custom: count > 5}"
->
+<div [ngStyle]="{background: count < 5 ? 'red' : 'green'}" [ngClass]="{custom: count > 5}">
     <h2 class="text-center">Contador: {{ count }} </h2>
 </div>
 
@@ -17,38 +14,41 @@
 </ng-template>
 
 <ul [ngSwitch]="count" class="list-group mx-auto col-3">
-    <li class="list-group-item"
-        *ngSwitchCase="3">É igual a 3
+    <li class="list-group-item" *ngSwitchCase="3">É igual a 3
     </li>
-    <li class="list-group-item"
-        *ngSwitchCase="5">É igual a 5
+    <li class="list-group-item" *ngSwitchCase="5">É igual a 5
     </li>
-    <li class="list-group-item"
-        *ngSwitchCase="8">É igual a 8
+    <li class="list-group-item" *ngSwitchCase="8">É igual a 8
     </li>
-    <li class="list-group-item"
-        *ngSwitchDefault>Esse é o default
+    <li class="list-group-item" *ngSwitchDefault>Esse é o default
     </li>
 </ul>
 
 <app-list-people [list]="pessoas"></app-list-people>
 
- <!-- Mesma coisa que a de cima,mas entendendo como o ngFor faz por debaixo dos panos -->
+<!-- Mesma coisa que a de cima,mas entendendo como o ngFor faz por debaixo dos panos -->
 <ul class="list-group mx-auto  my-3 col-3">
     <ng-template ngFor let-pessoa [ngForOf]="pessoas">
         <li class="list-group-item">
-        O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName}} e tem a idade de {{ pessoa.age}} anos
+            O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName}} e tem a idade de {{ pessoa.age}} anos
         </li>
     </ng-template>
 </ul>
-<div class ="col-4 mx-auto my-3">
-<h3 appMarcaTexto corDeFundo="pink" corDoTexto="brown">{{nome}}</h3>
-<button class="btn btn-success col-4 mx-auto" (click)="clicou('Rodrigo')">Clique</button>
+<div class="col-4 mx-auto my-3">
+    <h3 appMarcaTexto corDeFundo="pink" corDoTexto="brown">{{nome}}</h3>
+    <button class="btn btn-success col-4 mx-auto" (click)="clicou('Rodrigo')">Clique</button>
 </div>
 
 <div class="col-4 mx-auto">
-    <input type="text" class="form-control" 
-    placeholder="Digite alguma coisa"
-    [(ngModel)]="texto">
+    <input type="text" class="form-control" placeholder="Digite alguma coisa" [(ngModel)]="texto">
     <h4>Saida: {{ texto }} </h4>
+</div>
+
+<div class="container my-5">
+    <div class="row d-flex align-items-center justify-content-center">
+        <h2 class="text-center">LISTAGEM DE PERSONAGENS RICK AND MORTY</h2>
+        <div class="col-12">
+            <app-list-api></app-list-api>
+        </div>
+    </div>
 </div>

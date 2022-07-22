@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { MarcaTextoDirective } from './shared/directives/marca-texto.directive';
 import { PeopleService } from './shared/services/people.service';
 import { ListPeopleComponent } from './shared/components/list-people/list-people.component';
+import { ListApiComponent } from './shared/components/list-api/list-api.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MarcaTextoDirective,
     ListPeopleComponent,
+    ListApiComponent,
   ],
   imports: [
     BrowserModule,
