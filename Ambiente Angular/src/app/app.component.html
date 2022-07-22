@@ -34,7 +34,7 @@
 <ul class="list-group mx-auto  my-3 col-3">
     <li class="list-group-item"
     *ngFor="let pessoa of pessoas">
-    O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome}}    
+    O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName}} e tem a idade de {{ pessoa.age}} anos 
     </li>
 </ul>
 
@@ -42,7 +42,7 @@
 <ul class="list-group mx-auto  my-3 col-3">
     <ng-template ngFor let-pessoa [ngForOf]="pessoas">
         <li class="list-group-item">
-        O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome}}    
+        O nome da pessoa é {{ pessoa.firstName }} {{ pessoa.lastName}} e tem a idade de {{ pessoa.age}} anos
         </li>
     </ng-template>
 </ul>
