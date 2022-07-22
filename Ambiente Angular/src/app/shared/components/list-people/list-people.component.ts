@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PeopleService } from '../../services/people.service';
 
 @Component({
@@ -8,24 +8,16 @@ import { PeopleService } from '../../services/people.service';
 })
 export class ListPeopleComponent implements OnInit {
 
-  pessoas = [
+  @Input() list = [
     {
-      firstName : '',
-      lastName : '',
-      age : 0
+      firstName: '',
+      lastName: '',
+      age: 0
     }
-  ];
-
-  constructor(private peopleService : PeopleService) { }
+  ]
+  constructor() { }
 
   ngOnInit(): void {
-    this.getPeople();
-  }
-
-  getPeople() {
-    this.peopleService.getPeople().subscribe(people => {
-      this.pessoas = people;
-    });
   }
 
 }
