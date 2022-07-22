@@ -8,7 +8,7 @@ import { ListService } from '../../services/list.service';
 })
 export class ListApiComponent implements OnInit {
 
-  personagens: Array<any> = [];
+  personagens : Array<any> = [];
 
   constructor(private listService : ListService) { }
 
@@ -18,8 +18,8 @@ export class ListApiComponent implements OnInit {
 
   getList() {
     this.listService.getList().subscribe(result => {
-      this.personagens = result;
-      console.log(this.personagens);
+      this.personagens = result?.results;
+      console.log(this.personagens)
     })
   }
 }
