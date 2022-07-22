@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MarcaTextoDirective } from './shared/directives/marca-texto.directive';
 import { PeopleService } from './shared/services/people.service';
+import { ListPeopleComponent } from './shared/components/list-people/list-people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarcaTextoDirective,
+    ListPeopleComponent,
   ],
   imports: [
     BrowserModule,
