@@ -37,6 +37,7 @@
     O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome}}    
     </li>
 </ul>
+
  <!-- Mesma coisa que a de cima,mas entendendo como o ngFor faz por debaixo dos panos -->
 <ul class="list-group mx-auto  my-3 col-3">
     <ng-template ngFor let-pessoa [ngForOf]="pessoas">
@@ -45,3 +46,7 @@
         </li>
     </ng-template>
 </ul>
+
+<h1>{{nome}}</h1>
+
+<button class="btn btn-success col-4 mx-auto" (click)="clicou('Rodrigo')">Clique</button>

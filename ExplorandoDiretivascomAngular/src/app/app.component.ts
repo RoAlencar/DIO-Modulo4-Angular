@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   count = 0;
+  nome = 'Rodrigo de Alencar Xavier';
 
   pessoas =[{
     nome: "Ivonaldo",
@@ -33,6 +34,9 @@ export class AppComponent implements OnInit{
     }, 1000);
   }
   
+    clicou(nome : string) : void {
+    console.log('Clicou em mim', nome)
+  }
 
 
 }
